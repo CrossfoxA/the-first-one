@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% block htmltag %}
+    <html>
+{% endblock htmltag %}
+
+<head>
+
+    {% block title %}
+        <title>Document</title> 
+    {% endblock title %}
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'unus/main.css' %}">
+    <link 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+    <link href="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js">
+
+{% block head %}
+{% endblock head %}    
+</head>
+{% block body %}
+   <body>
+    </body> 
+{% endblock body %}
+</html>

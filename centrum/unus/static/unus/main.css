@@ -1,0 +1,20 @@
+.flexnav {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    background: whitesmoke;
+}
+.flexnav a {
+    display: block;
+    text-decoration: none;
+    padding: 0.75em;
+    color: #282C34
+}
+
+.flexnav a:hover {
+    background: rgb(245, 245, 245);
+    text-decoration: none;
+    color: white;
+
+}
+
