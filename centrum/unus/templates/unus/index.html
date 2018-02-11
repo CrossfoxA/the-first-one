@@ -6,15 +6,18 @@
     <title>Comfy</title> 
 {% endblock title %}
 {% block body %}
-<body style="background: #DDDDDD;">
-    <ul class="flexnav navbar-fixed-top">
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-    </ul>
-<div class="jumbotron">
- <p>dasdas</p>
-</div>
+<body style="background: #DDDDDD;" ng-controller="unusController">
+    <br>
+    <br>
+    <div>
+        <form ng-submit="add()">
+            <input type="text" placeholder="Teh Wae" ng-model="IndexInput">
+            <input value="Submit" type="submit" hidden>
+        </form>
+    </div>
+     <div ng-repeat="item in unusList">
+        <span ng-bind="item.name"></span>
+     </div>
+
 </body> 
 {% endblock body %}
