@@ -16,7 +16,7 @@
         </form>
     </div>
      <div ng-repeat="item in unusList">
-        <span ng-bind="item.name"></span>
+        <input type="checkbox" ng-model="item.done"><span ng-bind="item.name"></span>
      </div>
      <p>
          <button ng-click="remove()">Done</button>
