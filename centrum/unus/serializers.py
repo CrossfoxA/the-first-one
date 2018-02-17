@@ -4,4 +4,4 @@ from unus.models import unusListElements
 class unusSerializer(serializers.ModelSerializer):
     class Meta:
         model = unusListElements
-        fields = 'id', 
+        fields = ('id', 'list_element', 'done')
