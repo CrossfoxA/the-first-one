@@ -11,8 +11,9 @@
     <br>
     <div>
         <form ng-submit="add()">
+            {% csrf_token %}
             <input type="text" placeholder="Teh Wae" ng-model="IndexInput">
-            <input value="Submit" type="submit" hidden>
+            <button ng-click="saveData()" type="submit" > Submit </button>
         </form>
     </div>
      <div ng-repeat="item in unusList">

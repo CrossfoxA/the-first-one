@@ -10,9 +10,18 @@ app.controller('unusController', function($scope, $http){
             var list = {};
             list.name = response.data[i].list_element
             list.done = response.data[i].done
+            list.id   = response.data[i].id
             $scope.unusList.push(list);
         }
     });
+
+    $scope.saveData = function() {
+        var data = {list_element: $scope.IndexInput, done: false}
+        $http.put('/api', data)
+
+        if (data.list_element != "")
+            location.reload();
+    }
 
     $scope.add = function(){
         $scope.unusList.push({listElement: $scope.IndexInput, done:false});
@@ -23,7 +32,11 @@ app.controller('unusController', function($scope, $http){
         var oldList = $scope.unusList;
         $scope.unusList = [];
         angular.forEach(oldList, function(x) {
-            if (!x.done) $scope.unusList.push(x);
+            if (x.done) {
+                $http.delete('/api/' + x.id + '')
+            }
+            location.reload();
+            $scope.unusList.push(x);
         })
     }
 });
